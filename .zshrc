@@ -171,19 +171,3 @@ export ANDROID_HOME=/Users/ewangreer/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# aws profile
-alias aws-clear="unset AWS_PROFILE"
-
-alias aws-communications-production="export AWS_PROFILE=communications-production"
-alias aws-communications-staging="export AWS_PROFILE=communications-staging"
-alias aws-comms-staging="export AWS_PROFILE=comms-staging"
-alias aws-communications-uat="export AWS_PROFILE=communications-uat"
-
-alias aws-core-production="export AWS_PROFILE=core-production"
-alias aws-core-uat="export AWS_PROFILE=core-uat"
-alias aws-core-sandbox-console="export AWS_PROFILE=core-sandbox-console"
-
-function awsps() {
-    export AWS_PROFILE=$( perl -n -e'/\[profile (.*)\]/ && print "$1\n"' /Users/ewangreer/.aws/config | fzf )
-}
-
